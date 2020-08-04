@@ -1,0 +1,10 @@
+.container {
+  background-color: lightblue;
+  margin-top: 10px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.textField {
+  margin: 10px auto;
+}

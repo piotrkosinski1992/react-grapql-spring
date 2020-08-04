@@ -1,0 +1,13 @@
+.container {
+  padding: 20px;
+  width: 300px;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: black 1px solid;
+}
+.textField {
+  margin: 10px auto;
+}

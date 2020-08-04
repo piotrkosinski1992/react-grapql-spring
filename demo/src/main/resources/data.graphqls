@@ -1,0 +1,57 @@
+scalar LocalDateTime
+
+type Post {
+    id: ID!
+    username: String!
+    body: String!
+    createdAt: LocalDateTime!
+    likeCount: Int!
+    likes: [Like]
+    comments: [Comment]
+    commentCount: Int!
+}
+
+type Like {
+    id: ID!
+    username: String!
+    createdAt: LocalDateTime
+}
+
+type Comment {
+    id: ID!
+    username: String!
+    body: String!
+    createdAt: LocalDateTime!
+}
+
+type Query {
+    getPosts: [Post]!
+    getUserByToken(token: String!): User!
+}
+
+type Mutation {
+    register(registerInput: RegisterInput): User
+    login(loginInput: LoginInput): User
+    createPost(body: String!): Post
+    deletePost(postId: String!): Int
+    likePost(postId: String!): Like
+    commentPost(postId: String!, body: String!): Comment
+}
+
+input RegisterInput {
+    username: String!
+    password: String!
+    repeatPassword: String!
+}
+
+input LoginInput {
+    username: String!
+    password: String!
+}
+
+type User {
+    id: ID!
+    username: String!
+    createdAt: String!
+    token: String!
+}
